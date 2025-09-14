@@ -5,6 +5,9 @@ on: push
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  PORT: "2193"
+  API_URL: "http://gluetun:2193"
+  PROXY_CONTENT: "TRUE"
 
 permissions:
   contents: read
@@ -48,3 +51,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            PORT=${{ env.PORT }}
+            API_URL=${{ env.API_URL }}
