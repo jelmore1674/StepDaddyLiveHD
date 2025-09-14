@@ -6,7 +6,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   PORT: "2193"
-  API_URL: "http://gluetun:2193"
+  API_URL: "http://localhost:2193"
   PROXY_CONTENT: "TRUE"
 
 permissions:
